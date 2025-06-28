@@ -1,52 +1,38 @@
-
 import React from "react";
+import "./Experience.css";
 import { experience } from "../../portfolio";
-import { Fade } from "react-reveal";
 
-function Experience(props) {
-  const theme = props.theme;
-
+function Experience() {
   return (
     <div className="main" id="experience">
-      <Fade bottom duration={1000} distance="20px">
-        <div>
-          <h1 style={{ color: theme.text }}>{experience.title}</h1>
-          <p style={{ color: theme.secondaryText }}>{experience.description}</p>
-        </div>
-      </Fade>
-
-      <div style={{ marginTop: "30px" }}>
-        {experience.sections.map((section, sectionIndex) => (
-          <div key={sectionIndex} style={{ marginBottom: "40px" }}>
-            <h2 style={{ color: theme.accentColor }}>{section.title}</h2>
-            {section.experiences.map((work, i) => (
-              <Fade bottom duration={1000} distance="20px" key={i}>
-                <div style={{ marginBottom: "20px" }}>
-                  <h3 style={{ color: theme.text }}>{work.title}</h3>
-                  <h4 style={{ color: theme.secondaryText }}>{work.company}</h4>
-                  <p style={{ color: theme.accentColor }}>
-                    {work.duration} | {work.location}
-                  </p>
-                  <p style={{ color: theme.secondaryText }}>
-                    {work.description}
-                  </p>
-                  {work.company_url && (
-                    <a
-                      href={work.company_url}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        color: theme.accentColor,
-                        textDecoration: "underline",
-                        display: "inline-block",
-                        marginTop: "5px",
-                      }}
-                    >
-                      Visit Company
-                    </a>
-                  )}
+      <div className="experience-header">
+        <h1 className="heading experience-heading">Experience</h1>
+      </div>
+      <div className="experience-body">
+        {experience.sections.map((section, index) => (
+          <div key={index} className="experience-section">
+            <h2 className="section-title">{section.title}</h2>
+            {section.experiences.map((exp, idx) => (
+              <div key={idx} className="experience-card">
+                <div className="experience-card-left">
+                  {/* Optional: use a placeholder if you don't have logo_path */}
+                  {/* <img src={exp.logo_path} alt={exp.company} className="experience-logo" /> */}
                 </div>
-              </Fade>
+                <div className="experience-card-right">
+                  <h2 className="experience-role">{exp.title}</h2>
+                  <h3 className="experience-company">
+                    <a
+                      href={exp.company_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {exp.company}
+                    </a>
+                  </h3>
+                  <p className="experience-date">{exp.duration}</p>
+                  <p className="experience-desc">{exp.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         ))}

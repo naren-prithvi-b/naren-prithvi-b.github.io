@@ -1,45 +1,39 @@
 import React from "react";
+import EducationImg from "../../assets/images/education.svg";
 import { degrees } from "../../portfolio";
-import { Fade } from "react-reveal";
+ // Make sure this is an array!
 
-function EducationComponent(props) {
-  const theme = props.theme;
-
+export default function Education() {
   return (
-    <div className="main" id="education">
+    <div>
       <div className="basic-education">
-        <Fade bottom duration={1000} distance="20px">
-          <h1 style={{ color: theme.text }}>Education</h1>
-        </Fade>
-        {degrees.degrees.map((degree, index) => (
-          <Fade bottom duration={1000} distance="20px" key={index}>
-            <div style={{ marginBottom: "2rem" }}>
-              <h2 style={{ color: theme.text }}>{degree.title}</h2>
-              <h4 style={{ color: theme.secondaryText }}>{degree.subtitle}</h4>
-              <p style={{ color: theme.accentColor }}>{degree.duration}</p>
-              <ul>
-                {degree.descriptions.map((desc, i) => (
-                  <li key={i} style={{ color: theme.secondaryText }}>
-                    {desc}
-                  </li>
-                ))}
-              </ul>
-              {degree.website_link && (
-                <a
-                  href={degree.website_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: theme.accentColor, fontWeight: "bold" }}
-                >
-                  Visit Website
-                </a>
-              )}
+        <div className="education-heading-div">
+          <div className="education-heading-img-div">
+            <img
+              src={EducationImg}          // ✅ just use the imported SVG directly
+              alt="Education"
+            />
+          </div>
+          <div className="education-heading-text-div">
+            <h1 className="education-heading-text">Education</h1>
+          </div>
+        </div>
+        <div className="education-body-div">
+          {degrees.degrees.map((degree, index)=> (   // ✅ removed .degrees
+            <div key={index} className="education-card">
+              <h3>{degree.title}</h3>
+              <h4>{degree.subtitle}</h4>
+              <p>{degree.duration}</p>
+              {degree.descriptions.map((desc, i) => (
+                <p key={i}>• {desc}</p>
+              ))}
+              <a href={degree.website_link} target="_blank" rel="noopener noreferrer">
+                College Website
+              </a>
             </div>
-          </Fade>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
-export default EducationComponent;

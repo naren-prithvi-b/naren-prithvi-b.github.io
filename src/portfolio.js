@@ -24,7 +24,7 @@ const greeting = {
   nickname: "qa_automation_naren",
   subTitle:
     "Automation & Functional QA Engineer with hands-on experience in Selenium, TestNG, Playwright, API testing, and agile delivery practices. I believe in delivering quality software at speed.",
-  resumeLink: "https://drive.google.com/YOUR_RESUME_LINK",
+  resumeLink: "https://drive.google.com/file/d/1lAME-2-2FHq5aOBMpVlLJQ0xOLuD01Jq/view?usp=drive_link",
   portfolio_repository: "https://github.com/naren-prithvi-b/masterPortfolio",
   githubProfile: "https://github.com/naren-prithvi-b",
 };
@@ -68,11 +68,6 @@ const skills = {
           skillName: "Selenium",
           fontAwesomeClassname: "simple-icons:selenium",
           style: { color: "#43B02A" },
-        },
-        {
-          skillName: "TestNG",
-          fontAwesomeClassname: "simple-icons:testng",
-          style: { color: "#E06C75" },
         },
         {
           skillName: "Java",
@@ -222,41 +217,6 @@ const experience = {
   ],
 };
 
-// Projects Header
-const projectsHeader = {
-  title: "Projects",
-  description:
-    "Below are some of my QA automation projects built using Selenium, Playwright, Java, TestNG, and other testing tools. These showcase my capability in building scalable, maintainable, and robust testing solutions.",
-  avatar_image_path: "projects_image.svg",
-};
-
-// Projects Section
-const projects = {
-  data: [
-    {
-      id: "crm-automation",
-      name: "Oracle CRM Automation",
-      description:
-        "End-to-end automation of Oracle CRM modules using Selenium WebDriver, TestNG, and Maven. Covered modules like Contact, Opportunity, and Lead Management.",
-      url: "https://github.com/naren-prithvi-b/oracle-crm-automation",
-    },
-    {
-      id: "playwright-sample",
-      name: "Playwright with Java Framework",
-      description:
-        "Created a robust Playwright automation framework using Java. Includes advanced locators, screenshot reporting, and dynamic waits.",
-      url: "https://github.com/naren-prithvi-b/playwright-java-framework",
-    },
-    {
-      id: "api-testing-postman",
-      name: "Postman API Test Suite",
-      description:
-        "Designed automated API test cases for a financial application using Postman with JSON schema validation and CI integration.",
-      url: "https://github.com/naren-prithvi-b/api-postman-suite",
-    },
-  ],
-};
-
 // Publications Header
 const publicationsHeader = {
   title: "Articles & Blogs",
@@ -340,8 +300,6 @@ export {
   degrees,
   certifications,
   experience,
-  projectsHeader,
-  projects,
   publicationsHeader,
   publications,
   contactPageData,
